@@ -1,7 +1,9 @@
 package com.aghogho.cryptoappcleancode.domain.usecases.get_coins
 
 import com.aghogho.cryptoappcleancode.common.Resource
+import com.aghogho.cryptoappcleancode.data.remote.CoinPaprikaApi
 import com.aghogho.cryptoappcleancode.data.remote.dto.toCoin
+import com.aghogho.cryptoappcleancode.data.repository.CoinRepositoryImpl
 import com.aghogho.cryptoappcleancode.domain.model.Coin
 import com.aghogho.cryptoappcleancode.domain.repository.CoinRepository
 import kotlinx.coroutines.flow.Flow
