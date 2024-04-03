@@ -1,6 +1,5 @@
 package com.aghogho.cryptoappcleancode.presentation.coin_detail
 
-import android.util.Log
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.SavedStateHandle
@@ -9,7 +8,6 @@ import androidx.lifecycle.viewModelScope
 import com.aghogho.cryptoappcleancode.common.Constants.PARAM_COIN_ID
 import com.aghogho.cryptoappcleancode.common.Resource
 import com.aghogho.cryptoappcleancode.domain.usecases.get_coin.GetCoinUseCase
-import com.aghogho.cryptoappcleancode.domain.usecases.get_coins.GetCoinsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
@@ -18,7 +16,7 @@ import javax.inject.Inject
 @HiltViewModel
 class CoinDetailViewModel @Inject constructor(
     private val getCoinDetailUseCase: GetCoinUseCase,
-    savedStateHandle: SavedStateHandle
+    private val savedStateHandle: SavedStateHandle
 ): ViewModel() {
 
     private val _state = mutableStateOf(CoinDetailState())
