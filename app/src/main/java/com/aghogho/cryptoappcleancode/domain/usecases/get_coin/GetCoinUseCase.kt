@@ -19,7 +19,7 @@ class GetCoinUseCase @Inject constructor(
             val coin = coinRepository.getCoinById(coinId).toCoinDetail()
             emit(Resource.Success(coin))
         } catch (e: HttpException) {
-            emit(Resource.Error(e.localizedMessage ?: "An unexpected error occurred")) //This will attach the msg with the error code and if that does not exist we instead display the string message
+            emit(Resource.Error(e.localizedMessage ?: "An unexpected error occurred"))
         } catch (e: IOException) {
             emit(Resource.Error("Cannot fetch data, please check internet connection"))
         }
